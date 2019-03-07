@@ -6,7 +6,7 @@ const moment = require("moment");
 
 //JSON Files
 let points = JSON.parse(fs.readFileSync('JSON/points.json', 'utf8'));
-let userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
+let userData = JSON.parse(fs.readFileSync('JSON/userData.json', 'utf8'));
 
 bot.on('ready', () => {
     bot.user.setActivity('vous aider');
@@ -39,10 +39,10 @@ bot.on('message', msg => {
     //Attribue un PREFIX à notre bot.
     let prefix = "*"
     
-    fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
+    fs.writeFile('JSON/userData.json', JSON.stringify(userData), (err) => {
         if (err) console.error (err);
     })
-    fs.writeFile('Storage/points.json', JSON.stringify(points), (err) => {
+    fs.writeFile('JSON/points.json', JSON.stringify(points), (err) => {
         if (err) console.error (err);
     })
 
@@ -194,7 +194,8 @@ bot.on('message', msg => {
         }})
     }
 
-    fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
+    fs.writeFile('JSON
+                 /userData.json', JSON.stringify(userData), (err) => {
         if (err) console.error(err);
     })
 }});
